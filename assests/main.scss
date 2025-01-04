@@ -1,0 +1,101 @@
+@use "./base/reset";
+@use "./mixin/mediaqueries.scss" as mq;
+
+// Primary
+$Red: hsl(0, 78%, 62%);
+$Cyan: hsl(180, 62%, 55%);
+$Orange: hsl(34, 97%, 64%);
+$Blue: hsl(212, 86%, 64%);
+
+// Neutral
+$Very-Dark-Blue: hsl(234, 12%, 34%);
+$Grayish-Blue: hsl(229, 6%, 66%);
+$Very-Light-Gray: hsl(0, 0%, 98%);
+
+$font-fam: "Poppins", "Roboto", "Arial", sans-serif;
+$weight-s: 200;
+$weight-m: 400;
+$weight-l: 600;
+
+@mixin setBorderColor($color) {
+  border-top: 0.3rem solid $color;
+}
+
+html {
+  font-size: 15px;
+  font-family: $font-fam;
+}
+
+body {
+  min-height: 100vh;
+  color: $Grayish-Blue;
+  line-height: 1.5;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: $Very-Light-Gray;
+  padding: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.about {
+  margin: 4rem 0;
+  text-align: center;
+  font-weight: $weight-m;
+
+  .caption {
+    font-size: 1.6rem;
+    color: $Grayish-Blue;
+    font-weight: $weight-s;
+    margin-bottom: 1rem;
+    span {
+      display: block;
+      font-weight: $weight-l;
+      color: $Very-Dark-Blue;
+    }
+  }
+  .intro {
+    padding: 0 1.5rem;
+    font-weight: $weight-s;
+  }
+}
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 1rem;
+  gap: 1.5rem;
+
+  .card {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px hsl(229, 6%, 66%, 0.5);
+    min-height: 15rem;
+    padding: 1.5rem;
+    color: $Very-Dark-Blue;
+    margin-bottom: 0.2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-heading {
+    color: $Very-Dark-Blue;
+  }
+  .Supervisor {
+    @include setBorderColor($Cyan);
+  }
+  .team {
+    @include setBorderColor($Red);
+  }
+  .karma {
+    @include setBorderColor($Orange);
+  }
+  .calc {
+    @include setBorderColor($Blue);
+  }
+  .card-detail {
+    margin-bottom: 2rem;
+  }
+  img {
+    align-self: end;
+  }
+}

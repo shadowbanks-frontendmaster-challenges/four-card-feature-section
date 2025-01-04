@@ -1,0 +1,87 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+  font-family: "Poppins", "Roboto", "Arial", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  color: hsl(229, 6%, 66%);
+  line-height: 1.5;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(0, 0%, 98%);
+  padding: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.about {
+  margin: 4rem 0;
+  text-align: center;
+  font-weight: 400;
+}
+.about .caption {
+  font-size: 1.6rem;
+  color: hsl(229, 6%, 66%);
+  font-weight: 200;
+  margin-bottom: 1rem;
+}
+.about .caption span {
+  display: block;
+  font-weight: 600;
+  color: hsl(234, 12%, 34%);
+}
+.about .intro {
+  padding: 0 1.5rem;
+  font-weight: 200;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 1rem;
+  gap: 1.5rem;
+}
+.cards .card {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px hsla(229, 6%, 66%, 0.5);
+  min-height: 15rem;
+  padding: 1.5rem;
+  color: hsl(234, 12%, 34%);
+  margin-bottom: 0.2rem;
+  display: flex;
+  flex-direction: column;
+}
+.cards .card-heading {
+  color: hsl(234, 12%, 34%);
+}
+.cards .Supervisor {
+  border-top: 0.3rem solid hsl(180, 62%, 55%);
+}
+.cards .team {
+  border-top: 0.3rem solid hsl(0, 78%, 62%);
+}
+.cards .karma {
+  border-top: 0.3rem solid hsl(34, 97%, 64%);
+}
+.cards .calc {
+  border-top: 0.3rem solid hsl(212, 86%, 64%);
+}
+.cards .card-detail {
+  margin-bottom: 2rem;
+}
+.cards img {
+  align-self: end;
+}
+
+/*# sourceMappingURL=styles.css.map */
