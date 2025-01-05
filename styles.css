@@ -20,30 +20,39 @@ body {
 main {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   background-color: hsl(0, 0%, 98%);
   padding: 1.5rem;
-  margin-bottom: 4rem;
 }
 
 .about {
-  margin: 4rem 0;
+  margin-bottom: 4rem;
   text-align: center;
-  font-weight: 400;
+}
+.about span {
+  color: hsl(234, 12%, 34%);
+  font-weight: 200;
+  font-size: 2.5rem;
 }
 .about .caption {
-  font-size: 1.6rem;
-  color: hsl(229, 6%, 66%);
-  font-weight: 200;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
+  font-weight: 600;
+  color: hsl(234, 12%, 34%);
 }
 .about .caption span {
   display: block;
-  font-weight: 600;
-  color: hsl(234, 12%, 34%);
 }
 .about .intro {
   padding: 0 1.5rem;
   font-weight: 200;
+}
+@media (min-width: 48rem) {
+  .about .intro {
+    width: 33rem;
+  }
 }
 
 .cards {
@@ -55,17 +64,17 @@ main {
 .cards .card {
   border-radius: 0.5rem;
   box-shadow: 0 4px 10px hsla(229, 6%, 66%, 0.5);
-  min-height: 15rem;
+  min-height: 16rem;
   padding: 1.5rem;
-  color: hsl(234, 12%, 34%);
   margin-bottom: 0.2rem;
   display: flex;
   flex-direction: column;
 }
 .cards .card-heading {
+  font-size: 1.2rem;
   color: hsl(234, 12%, 34%);
 }
-.cards .Supervisor {
+.cards .supervisor {
   border-top: 0.3rem solid hsl(180, 62%, 55%);
 }
 .cards .team {
@@ -82,6 +91,44 @@ main {
 }
 .cards img {
   align-self: end;
+  max-width: 4.2rem;
+  max-height: 4.2rem;
+  bottom: 0;
+}
+
+@media (min-width: 30rem) {
+  main {
+    height: 100vh;
+  }
+  .cards {
+    grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+    grid-template-areas: "supervisor team" "karma calc";
+  }
+  .cards .supervisor {
+    grid-area: supervisor;
+  }
+  .cards .team {
+    grid-area: team;
+  }
+  .cards .karma {
+    grid-area: karma;
+  }
+  .cards .calc {
+    grid-area: calc;
+  }
+  .cards .card {
+    max-width: 22rem;
+  }
+  .cards .card .card-heading,
+  .cards .card .card-detail {
+    flex-grow: 1;
+  }
+}
+@media (min-width: 48rem) {
+  .cards {
+    grid-template: repeat(4, 1fr)/repeat(3, 1fr);
+    grid-template-areas: ". team ." "supervisor team calc" "supervisor karma calc" ". karma .";
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

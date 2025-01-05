@@ -35,30 +35,39 @@ body {
 main {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   background-color: $Very-Light-Gray;
   padding: 1.5rem;
-  margin-bottom: 4rem;
 }
 
 .about {
-  margin: 4rem 0;
+  margin-bottom: 4rem;
   text-align: center;
-  font-weight: $weight-m;
-
-  .caption {
-    font-size: 1.6rem;
-    color: $Grayish-Blue;
+  span {
+    color: $Very-Dark-Blue;
     font-weight: $weight-s;
+    font-size: 2.5rem;
+  }
+  .caption {
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    font-weight: $weight-l;
+    color: $Very-Dark-Blue;
     span {
       display: block;
-      font-weight: $weight-l;
-      color: $Very-Dark-Blue;
     }
   }
   .intro {
     padding: 0 1.5rem;
     font-weight: $weight-s;
+  }
+
+  @include mq.respond(desktop) {
+    .intro {
+      width: 33rem;
+    }
   }
 }
 .cards {
@@ -66,21 +75,22 @@ main {
   grid-template-columns: 1fr;
   padding: 0 1rem;
   gap: 1.5rem;
+  //   margin-bottom: 4rem;
 
   .card {
     border-radius: 0.5rem;
     box-shadow: 0 4px 10px hsl(229, 6%, 66%, 0.5);
-    min-height: 15rem;
+    min-height: 16rem;
     padding: 1.5rem;
-    color: $Very-Dark-Blue;
     margin-bottom: 0.2rem;
     display: flex;
     flex-direction: column;
   }
   .card-heading {
+    font-size: 1.2rem;
     color: $Very-Dark-Blue;
   }
-  .Supervisor {
+  .supervisor {
     @include setBorderColor($Cyan);
   }
   .team {
@@ -97,5 +107,51 @@ main {
   }
   img {
     align-self: end;
+    max-width: 4.2rem;
+    max-height: 4.2rem;
+    bottom: 0;
+  }
+}
+
+@include mq.respond(tablet) {
+  main {
+    height: 100vh;
+  }
+  .cards {
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    grid-template-areas:
+      "supervisor team"
+      "karma calc";
+    // place-content: center;
+    .supervisor {
+      grid-area: supervisor;
+    }
+    .team {
+      grid-area: team;
+    }
+    .karma {
+      grid-area: karma;
+    }
+    .calc {
+      grid-area: calc;
+    }
+    .card {
+      max-width: 22rem;
+      .card-heading,
+      .card-detail {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+@include mq.respond(desktop) {
+  .cards {
+    grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+    grid-template-areas:
+      ". team ."
+      "supervisor team calc"
+      "supervisor karma calc"
+      ". karma .";
   }
 }
