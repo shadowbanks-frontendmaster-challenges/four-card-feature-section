@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github](https://github.com/shadowbanks-frontendmaster-challenges/four-card-feature-section)
+- Live Site URL: [Github Page](https://shadowbanks-frontendmaster-challenges.github.io/four-card-feature-section/)
 
 ## My process
 
